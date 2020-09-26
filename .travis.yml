@@ -20,4 +20,10 @@ install:
 before_script:
    echo 'some additional pretesting requirements'
 script:
-  echo 'some testing goes here'
+  ./gradlew test jacocoTestReport
+  
+after_script:
+ echo "Start after testing"
+
+
+ find .jacocoTestReport.csv|xargs cat|awk -F',' '{print $3" " $4" "$5}'
