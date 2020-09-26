@@ -20,4 +20,4 @@ install:
 before_script:
    echo 'some additional pretesting requirements'
 script:
-  echo 'some testing goes here'
+  ./gradlew test
