@@ -12,11 +12,12 @@ jdk: oraclejdk8
     # - find vagrant/provision -name "*.yml" -exec ansible-lint -x ANSIBLE008,ANSIBLE0011,ANSIBLE0012,ANSIBLE0013  {} +
 
 before_install:
-  #./gradlew check
+  # may be some sudo installations here
 
 install:
   ./gradlew clean jar
-#before_script:
 
+before_script:
+   echo 'some additional pretesting requirements'
 script:
   echo 'some testing goes here'
