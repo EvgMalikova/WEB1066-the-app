@@ -25,3 +25,8 @@ script:
 after_script:
   - echo "Start after testing"
   - find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{printf $3" "$4" "$5}'
+
+before_deploy:
+  - ./gradlew test jacocoTestCoverageVerification
+deploy:
+  - echo "WIP"
